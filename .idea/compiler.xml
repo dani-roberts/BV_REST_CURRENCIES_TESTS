@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="BV_REST_CURRENCIES_TESTS" />
+        <module name="bv_rest_currencies_tests" />
       </profile>
     </annotationProcessing>
   </component>
