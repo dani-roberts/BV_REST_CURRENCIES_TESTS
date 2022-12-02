@@ -7,9 +7,9 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 import static org.fest.assertions.Assertions.assertThat;
 
-public class currencyPairsTest {
+public class currencyPairs {
 
-    private final static Logger LOGGER = Logger.getLogger(currencyPairsTest.class);
+    private final static Logger LOGGER = Logger.getLogger(currencyPairs.class);
 
     @BeforeTest
     private Response currencyApi() {
@@ -21,7 +21,9 @@ public class currencyPairsTest {
                 .get(url);
 
         response.prettyPrint();
-        
+
+        return response;
+
     }
 
     @Test
@@ -36,7 +38,7 @@ public class currencyPairsTest {
         int currencyItems = getCurrenciesListItems().getCurrencyAbrv().size();
 
         assertThat(currencyItems)
-                .as(String.format("Curry items is more than -%s\n", 20, currencyItems))
+                .as(String.format("Curry items is more than - %s\n", 20, currencyItems))
                 .isGreaterThanOrEqualTo(20);
         LOGGER.info("Checking list of currency: " + currencyItems + " ...");
     }
